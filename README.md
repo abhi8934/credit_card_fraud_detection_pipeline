@@ -48,15 +48,46 @@
 
 ```
 credit_card_fraud_detection_pipeline/
+├── README.md
 ├── consumer.py
 ├── dashboard
 │   └── app.py
 ├── database
 │   └── schema.sql
+├── dig_final.png
 ├── docker
 │   └── compose.yml
 ├── eda
 │   └── eda.ipynb
+├── images
+│   ├── Fraud_vs_Normal_Distribution.png
+│   ├── Latest_transactions.png
+│   └── Transaction_amount_distribution.png
+├── models
+│   ├── XGBoost_fraud_model.pkl
+│   └── logistic_fraud_model.pkl
+├── producer.py
+├── requirements.txt
+├── setups
+│   └── kafka_setup.txt
+└── training
+    ├── train_lr.ipynb
+    └── train_xgboost.ipynb.
+├── README.md
+├── consumer.py
+├── dashboard
+│   └── app.py
+├── database
+│   └── schema.sql
+├── dig_final.png
+├── docker
+│   └── compose.yml
+├── eda
+│   └── eda.ipynb
+├── images
+│   ├── Fraud_vs_Normal_Distribution.png
+│   ├── Latest_transactions.png
+│   └── Transaction_amount_distribution.png
 ├── models
 │   ├── XGBoost_fraud_model.pkl
 │   └── logistic_fraud_model.pkl
