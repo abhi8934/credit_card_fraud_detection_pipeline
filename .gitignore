@@ -1,0 +1,16 @@
+﻿
+# Python
+pycache/
+*.py[cod]
+*$py.class
+*.so
+
+#Virtual Environments
+venv/
+.venv/
+env/
+.env
+ENV/
+
+# DATA
+data/
