@@ -14,3 +14,9 @@ ENV/
 
 # DATA
 data/
+
+#SECRETS
+dashboard/.streamlit
+
+#Devcontainer
+.devcontainer

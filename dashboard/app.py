@@ -36,32 +36,90 @@ st.title("💳 Real-Time Fraud Detection Dashboard (ML)")
 
 # ---------------- AUTO REFRESH ----------------
 st_autorefresh(interval=2000, key="datarefresh")  # refresh every 2 seconds
+# ---------------- DATABASE CONFIG ----------------
+
+load_dotenv()
+
+
+def get_db_config():
+    """
+    Load database configuration.
+
+    Streamlit Cloud:
+        Uses st.secrets
+
+    Local:
+        Uses .env
+    """
+
+    # Streamlit Cloud
+    if "DB_HOST" in st.secrets:
+        return {
+            "host": st.secrets["DB_HOST"],
+            "port": st.secrets["DB_PORT"],
+            "database": st.secrets["DB_NAME"],
+            "user": st.secrets["DB_USER"],
+            "password": st.secrets["DB_PASSWORD"],
+        }
+
+    # Local machine
+    return {
+        "host": os.getenv("DB_HOST"),
+        "port": os.getenv("DB_PORT"),
+        "database": os.getenv("DB_NAME"),
+        "user": os.getenv("DB_USER"),
+        "password": os.getenv("DB_PASSWORD"),
+    }
+
+
+def get_db_connection():
+    """Create a PostgreSQL connection."""
+
+    db = get_db_config()
+
+    # Check for missing configuration
+    missing = [
+        key
+        for key, value in db.items()
+        if value is None or value == ""
+    ]
+
+    if missing:
+        raise RuntimeError(
+            f"Missing database configuration: {', '.join(missing)}"
+        )
+
+    return psycopg2.connect(
+        host=db["host"],
+        port=int(db["port"]),
+        database=db["database"],
+        user=db["user"],
+        password=db["password"],
+        sslmode="require"
+    )
+
 
 # ---------------- DATABASE FUNCTION ----------------
+
 @st.cache_data(ttl=2)
 def get_data():
-    load_dotenv()
 
-    DB_HOST = os.getenv("DB_HOST")
-    DB_PORT = os.getenv("DB_PORT")
-    DB_NAME = os.getenv("DB_NAME")
-    DB_USER = os.getenv("DB_USER")
-    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    conn = get_db_connection()
 
-    # Connect to PostgreSQL
-    conn = psycopg2.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        database=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD
-    )
-    query = "SELECT * FROM transactions ORDER BY transaction_id DESC"
-    df = pd.read_sql(query, conn)
-    conn.close()
+    try:
+        query = """
+            SELECT *
+            FROM transactions
+            ORDER BY transaction_id DESC
+        """
+
+        df = pd.read_sql_query(query, conn)
+
+    finally:
+        conn.close()
+
     return df
-
-df = get_data()
+df  = get_data()
 
 # ---------------- KPIs ----------------
 total_tx = len(df)
