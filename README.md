@@ -201,6 +201,7 @@ Use Confluent Cloud for Kafka
 Add authentication
 Create REST API
 Add more ML features
+```
 
 👨‍💻 Author
 Abhimanyu Pandey
@@ -215,4 +216,4 @@ GitHub: @abhi8934
 Star this repo → Share with network → Follow for more
 
 Thank you for your valuable time!
-```
+
