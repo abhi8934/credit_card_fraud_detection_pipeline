@@ -99,7 +99,7 @@ credit_card_fraud_detection_pipeline/
     ├── train_lr.ipynb
     └── train_xgboost.ipynb
 ---
-
+```
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
@@ -207,6 +207,7 @@ Abhimanyu Pandey
 
 GitHub: @abhi8934
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/abhimanyu-pandey-997b353a3/)
 
 📍 India | 💼 Open for Data Engineering Roles
 
@@ -215,4 +216,3 @@ Star this repo → Share with network → Follow for more
 
 Thank you for your valuable time!
 ```
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/abhimanyu-pandey-997b353a3/)
