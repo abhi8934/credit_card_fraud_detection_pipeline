@@ -207,7 +207,6 @@ Abhimanyu Pandey
 
 GitHub: @abhi8934
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/abhimanyu-pandey-997b353a3/)
 
 📍 India | 💼 Open for Data Engineering Roles
 
@@ -215,3 +214,5 @@ GitHub: @abhi8934
 Star this repo → Share with network → Follow for more
 
 Thank you for your valuable time!
+```
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/abhimanyu-pandey-997b353a3/)
