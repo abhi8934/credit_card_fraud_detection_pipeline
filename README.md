@@ -15,7 +15,7 @@
 **Real-time fraud detection system** that:
 
 - ⚡ Processes transactions instantly via Kafka
-- 🤖 Predicts fraud using XgBoost (92% accuracy)
+- 🤖 Predicts fraud using XgBoost
 - 💾 Stores everything in PostgreSQL
 - 📊 Shows live dashboard with Streamlit
 
@@ -207,7 +207,7 @@ Abhimanyu Pandey
 
 GitHub: @abhi8934
 
-LinkedIn: Abhimanyu Pandey
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/abhimanyu-pandey-997b353a3/)
 
 📍 India | 💼 Open for Data Engineering Roles
 
